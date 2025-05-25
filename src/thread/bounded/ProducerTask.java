@@ -1,5 +1,7 @@
 package thread.bounded;
 
+import java.util.concurrent.BlockingQueue;
+
 import static thread.util.MyLogger.log;
 
 public class ProducerTask implements Runnable{
@@ -14,8 +16,7 @@ public class ProducerTask implements Runnable{
     @Override
     public void run() {
         log("[생산 시도]"+request+"->"+queue);
-        queue.put(request);
+            queue.put(request);
         log("[생산 완료]"+request+"->"+queue);
-
     }
 }
