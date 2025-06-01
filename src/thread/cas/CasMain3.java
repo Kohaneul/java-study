@@ -48,7 +48,7 @@ public class CasMain3 {
             result = atomicInteger.compareAndSet(getValue,getValue +1);
             log("result : "+result);
         }
-        while(!result);
+        while(!result); //false면 종료  , true면 계속 실행
         return getValue+1;  //atomicInteger.get()이면 다른 스레드가 증가시킨 값을 반환할 수도 있음
     }
 
