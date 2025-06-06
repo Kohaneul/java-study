@@ -1,17 +1,20 @@
 package thread.collection.simple.list;
 
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
 import static thread.util.MyLogger.log;
 
 public class SimpleListMainV2 {
     public static void main(String[] args) throws InterruptedException {
-//     test(new BasicList());
+     test(new BasicList());
 
 //        test(new SyncList());
-        test(new SyncProxyList(new BasicList()));
+//        test(new SyncProxyList(new BasicList()));
 
     }
 
-    private static void test(SimpleList list) throws InterruptedException {
+    private static void test(BasicList list) throws InterruptedException {
         log(list.getClass().getSimpleName());
         //A를 리스트에 저장하는 코드
         Runnable addA = new Runnable() {
