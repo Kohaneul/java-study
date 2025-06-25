@@ -5,7 +5,7 @@ import java.io.*;
 public class DataStreamEtcMain {
     public static void main(String[] args) throws IOException {
         FileOutputStream fos = new FileOutputStream("temp/data.dat");
-        DataOutputStream dos = new DataOutputStream(fos);
+        DataOutputStream dos = new DataOutputStream(fos);   //자바의 데이터 형을 그대로 저장하고 싶을때
         dos.writeUTF("회원A");
         dos.writeInt(20);
         dos.writeDouble(20.1);
