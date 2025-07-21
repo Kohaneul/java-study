@@ -18,14 +18,13 @@ public class ServerV6 {
         //ShutdownHook 등록
         ShutdownHook shutdownHook = new ShutdownHook(serverSocket,sessionManager);
         Runtime.getRuntime().addShutdownHook(new Thread(shutdownHook,"shutdown"));
+        Socket socket = serverSocket.accept();
 
         try{
             while(true){
-                Socket socket = serverSocket.accept();
                 log("소캣 연결 : "+socket);
                 Thread thread = new Thread(new SessionV6(socket,sessionManager));
                 thread.start();
-
             }
         }
         catch(IOException e){
